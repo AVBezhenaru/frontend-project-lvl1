@@ -9,6 +9,6 @@ jobs:
 
     steps:
       - name: Run linter
-        run: |
+        run:
           make lint
    
