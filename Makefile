@@ -4,7 +4,7 @@ start:
 		npx node bin/brain-games.js
 
 lint:
-		npx eslint .
+    npx eslint .
 
 publish:
 		npm publish --dry-run
