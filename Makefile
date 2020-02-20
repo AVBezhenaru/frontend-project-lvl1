@@ -1,11 +1,8 @@
-install: 
+install:
         npm install
-
-start: 
+start:
         npx node bin/brain-games.js
-
 lint:
         npx eslint .
-
 publish:
         npm publish --dry-run
