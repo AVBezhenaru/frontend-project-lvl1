@@ -1,7 +1,6 @@
 env:
   browser: true
   es6: true
-  node: true
 extends:
   - airbnb-base
 globals:
@@ -11,6 +10,7 @@ parserOptions:
   ecmaVersion: 2018
   sourceType: module
 rules: {
-  no-console: 0
+  no-console: 0,
+  linebreak-style: ["error", "windows"],
+  import/extensions: ["off", "always"]
 }
-
