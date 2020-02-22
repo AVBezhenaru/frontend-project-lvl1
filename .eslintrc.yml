@@ -13,8 +13,4 @@ rules: {
   no-console: 0,
   linebreak-style: ["error", "windows"],
   import/extensions: ["off", "always"]
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> ff79522d7bc4d4cb850c9286f6e20890c6d07200
