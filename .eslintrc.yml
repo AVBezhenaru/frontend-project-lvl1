@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 env:
   browser: true
   es6: true
@@ -11,8 +10,7 @@ parserOptions:
   ecmaVersion: 2018
   sourceType: module
 rules: {
-  no-console: 0
+  no-console: 0,
+  linebreak-style: ["error", "windows"],
+  import/extensions: ["off", "always"]
 }
-=======
-
->>>>>>> c15e6f2c03d6387434a9184d58d34e5d4c8a5b02
