@@ -1,49 +1,32 @@
 import readlineSync from 'readline-sync';
 
-const brainGames = () => {
+const gameFlow = (game) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May i habe you name?:');
   console.log(`Hello, ${userName}!`);
-};
 
-const brainEven = () => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May i habe you name?:');
-  console.log(`Hello, ${userName}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  if (!game) {
+    return true;
+  }
 
-  const randomRange = 100;
   let count = 0;
+  const attempt = 3;
 
-  while (count !== 3) {
-    const randomNumber = Math.floor(Math.random() * randomRange);
-    console.log(`Question: ${randomNumber}`);
-    const answer = readlineSync.question('Your answer: ');
-
-    if (randomNumber % 2 === 0 && answer === 'yes') {
-      count += 1;
+  while (count !== attempt) {
+    if (game() === true) {
       console.log('Correct!');
-    } else if (randomNumber % 2 !== 0 && answer === 'no') {
       count += 1;
-      console.log('Correct!');
-    } else if (randomNumber % 2 === 0 && answer === 'no') {
-      console.log(`"no" is wrong answer ;(. Correct answer was "yes".
-      Let's try again, ${userName}`);
-      return false;
-    } else if (randomNumber % 2 !== 0 && answer === 'yes') {
-      console.log(`"yes" is wrong answer ;(. Correct answer was "no".
-      Let's try again, ${userName}`);
-      return false;
     } else {
-      console.log('incorrect response syntax, try again');
+      console.log(`Let's try again, ${userName}!`);
       return false;
     }
 
-    if (count === 3) {
+    if (count === attempt) {
       console.log(`Congratulations, ${userName}!`);
+      return true;
     }
   }
   return true;
 };
 
-export { brainGames, brainEven };
+export default gameFlow;

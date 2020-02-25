@@ -12,5 +12,6 @@ parserOptions:
 rules: {
   no-console: 0,
   linebreak-style: ["error", "windows"],
-  import/extensions: ["off", "always"]
+  import/extensions: ["off", "always"],
+  no-else-return: [ "off" , {allowElseIf :  true }],
 }
