@@ -1,6 +1,6 @@
-<script id="asciicast-of9E79paW86MRgtnQZW7VmdJn" src="https://asciinema.org/a/of9E79paW86MRgtnQZW7VmdJn.js" async></script>
+[![asciicast](https://asciinema.org/a/of9E79paW86MRgtnQZW7VmdJn.svg)](https://asciinema.org/a/of9E79paW86MRgtnQZW7VmdJn)
 
-<script id="asciicast-HuFo9sjvkQXW9roJwiXLozBV1" src="https://asciinema.org/a/HuFo9sjvkQXW9roJwiXLozBV1.js" async></script>
+[![asciicast](https://asciinema.org/a/HuFo9sjvkQXW9roJwiXLozBV1.svg)](https://asciinema.org/a/HuFo9sjvkQXW9roJwiXLozBV1)
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
