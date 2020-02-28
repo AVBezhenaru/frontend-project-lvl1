@@ -1,21 +1,17 @@
 import readlineSync from 'readline-sync';
+import genRandNum from '../genRandNum.js';
 
 const evenGame = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const randomRange = 100;
-  const randomNumber = Math.floor(Math.random() * randomRange);
-  console.log(`Question: ${randomNumber}`);
-  const answer = readlineSync.question('Your answer: ');
+  const randNum = genRandNum(0, 100);
+  console.log(`Question: ${randNum}`);
+  const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
+  const correctAnswer = randNum % 2 === 0 ? 'yes' : 'no';
 
-  if (randomNumber % 2 === 0 && answer === 'yes') {
+  if (correctAnswer === userAnswer) {
     return true;
-  } else if (randomNumber % 2 !== 0 && answer === 'no') {
-    return true;
-  } else if (randomNumber % 2 === 0 && answer === 'no') {
-    console.log('"no" is wrong answer ;(. Correct answer was "yes".');
-    return false;
   } else {
-    console.log('"yes" is wrong answer ;(. Correct answer was "no".');
+    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
     return false;
   }
 };

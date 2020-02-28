@@ -1,7 +1,7 @@
 {
-  "name": "my_first_front_AVBezhenaru",
-  "version": "1.1.0",
-  "description": "my first frontend project",
+  "name": "brain_games_bezhenaru",
+  "version": "1.1.1",
+  "description": "Console game",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

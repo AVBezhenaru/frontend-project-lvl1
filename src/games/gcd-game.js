@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
+import genRandNum from '../genRandNum.js';
 
-const gcd = (a, b) => {
+const getGCD = (a, b) => {
   while (a !== b) {
     if (a > b) {
       a -= b;
@@ -14,18 +15,17 @@ const gcd = (a, b) => {
 
 const gcdGame = () => {
   console.log('Find the greatest common divisor of given numbers.');
-  const randomRange = 100;
-  const randomNumber1 = Math.floor(Math.random() * randomRange);
-  const randomNumber2 = Math.floor(Math.random() * randomRange);
-  console.log(`Question: ${randomNumber1} ${randomNumber2}`);
+  const randNum1 = genRandNum(1, 200);
+  const randNum2 = genRandNum(1, 200);
+  console.log(`Question: ${randNum1} ${randNum2}`);
 
-  const result = gcd(randomNumber1, randomNumber2);
-  const answer = readlineSync.question('Your answer: ');
+  const correctAnswer = getGCD(randNum1, randNum2);
+  const userAnswer = readlineSync.question('Your answer: ');
 
-  if (result === parseInt(answer, 10)) {
+  if (correctAnswer === parseInt(userAnswer, 10)) {
     return true;
   } else {
-    console.log(`Your answer: ${answer}, ${answer} is wrong answer ;(.Correct answer was ${result}.`);
+    console.log(`Your answer: ${userAnswer}, ${userAnswer} is wrong answer ;(.Correct answer was ${correctAnswer}.`);
     return false;
   }
 };

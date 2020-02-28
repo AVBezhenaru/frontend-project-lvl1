@@ -1,37 +1,42 @@
 import readlineSync from 'readline-sync';
+import genRandNum from '../genRandNum.js';
 
-const randomOperation = () => {
-  const randomRange = 10;
-  const randomNumber1 = Math.floor(Math.random() * randomRange);
-  const randomNumber2 = Math.floor(Math.random() * randomRange);
+const genRandOperations = () => {
+  const randNum1 = genRandNum();
+  const randNum2 = genRandNum();
   const operators = ['+', '-', '*'];
-  const randomOperator = operators[Math.floor(operators.length * Math.random())];
+  const randOperator = operators[genRandNum(0, operators.length - 1)];
   const result = [];
 
-  if (randomOperator === '+') {
-    result[0] = (`${randomNumber1} + ${randomNumber2}`);
-    result[1] = (randomNumber1 + randomNumber2);
-  } else if (randomOperator === '-') {
-    result[0] = (`${randomNumber1} - ${randomNumber2}`);
-    result[1] = (randomNumber1 - randomNumber2);
-  } else if (randomOperator === '*') {
-    result[0] = (`${randomNumber1} * ${randomNumber2}`);
-    result[1] = (randomNumber1 * randomNumber2);
+  switch (randOperator) {
+    case '+':
+      result[0] = (`${randNum1} + ${randNum2}`);
+      result[1] = (randNum1 + randNum2);
+      break;
+    case '-':
+      result[0] = (`${randNum1} - ${randNum2}`);
+      result[1] = (randNum1 - randNum2);
+      break;
+    case '*':
+      result[0] = (`${randNum1} * ${randNum2}`);
+      result[1] = (randNum1 * randNum2);
   }
 
   return result;
 };
 
 const calcGame = () => {
-  const valuesForbrainCalc = randomOperation();
+  const resultsRandOperations = genRandOperations();
+  const gameQuestion = resultsRandOperations[0];
+  const correctAnswer = resultsRandOperations[1];
   console.log('What is the result of the expression?');
-  console.log(valuesForbrainCalc[0]);
-  const answer = readlineSync.question('Your answer: ');
+  console.log(gameQuestion);
+  const userAnswer = readlineSync.question('Your answer: ');
 
-  if (parseInt(answer, 10) === valuesForbrainCalc[1]) {
+  if (parseInt(userAnswer, 10) === correctAnswer) {
     return true;
   } else {
-    console.log(`Your answer: ${answer}, ${answer} is wrong answer ;(.Correct answer was ${valuesForbrainCalc[1]}.`);
+    console.log(`Your answer: ${userAnswer}, ${userAnswer} is wrong answer ;(.Correct answer was ${correctAnswer}.`);
     return false;
   }
 };

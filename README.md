@@ -1,13 +1,25 @@
-[![asciicast](https://asciinema.org/a/of9E79paW86MRgtnQZW7VmdJn.svg)](https://asciinema.org/a/of9E79paW86MRgtnQZW7VmdJn)
-
-[![asciicast](https://asciinema.org/a/HuFo9sjvkQXW9roJwiXLozBV1.svg)](https://asciinema.org/a/HuFo9sjvkQXW9roJwiXLozBV1)
-
-[![asciicast](https://asciinema.org/a/x0CTdTLzQ8tI293Baq44mYt7Z.svg)](https://asciinema.org/a/x0CTdTLzQ8tI293Baq44mYt7Z)
-
-[![asciicast](https://asciinema.org/a/HsEq0ddPI6mrkt8RapPySq3d5.svg)](https://asciinema.org/a/HsEq0ddPI6mrkt8RapPySq3d5)
-
-[![asciicast](https://asciinema.org/a/d7DgaBHFTvWB0vXrL6gLtxFSm.svg)](https://asciinema.org/a/d7DgaBHFTvWB0vXrL6gLtxFSm)
-
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
+
+BRAIN GAMES
+Console game
+
+Install: npm i brain_games_bezhenaru
+[![asciicast](https://asciinema.org/a/rnq3poCxhEsy32cohaFXoOWKg.svg)](https://asciinema.org/a/rnq3poCxhEsy32cohaFXoOWKg)
+
+Game: "Parity Check"
+[![asciicast](https://asciinema.org/a/Su0yszt1BxhpO1bOTEcrffuU5.svg)](https://asciinema.org/a/Su0yszt1BxhpO1bOTEcrffuU5)
+
+Game: "Calculator"
+[![asciicast](https://asciinema.org/a/4329JmjuGh9VAAKRWhMQyelgJ.svg)](https://asciinema.org/a/4329JmjuGh9VAAKRWhMQyelgJ)
+
+Game: "GCD"
+[![asciicast](https://asciinema.org/a/faqhXF6gX0vejgWwtnk09etUK.svg)](https://asciinema.org/a/faqhXF6gX0vejgWwtnk09etUK)
+
+Game: "Arithmetic Progression"
+[![asciicast](https://asciinema.org/a/e4Hq83FwAxqqj0rdd5REqA0cf.svg)](https://asciinema.org/a/e4Hq83FwAxqqj0rdd5REqA0cf)
+
+Game: "Is it a Prime Number?"
+[![asciicast](https://asciinema.org/a/NIWVTZqVg2rJg2orstpPyq2p9.svg)](https://asciinema.org/a/NIWVTZqVg2rJg2orstpPyq2p9)
+
