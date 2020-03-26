@@ -1,18 +1,21 @@
-import readlineSync from 'readline-sync';
+// import readlineSync from 'readline-sync';
 import genRandNum from '../genRandNum.js';
+import launchGameEngine from '../index.js';
 
-const evenGame = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const randNum = genRandNum(0, 100);
-  console.log(`Question: ${randNum}`);
-  const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
-  const correctAnswer = randNum % 2 === 0 ? 'yes' : 'no';
-
-  if (correctAnswer === userAnswer) {
-    return true;
-  } else {
-    console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-    return false;
-  }
+const evenGame = {
+  rules: 'Answer "yes" if the number is even, otherwise answer "no".',
+  question: 0,
+  getQuestion() {
+    this.question = genRandNum(0, 100);
+  },
+  answer: '',
+  getAnswer() {
+    this.answer = (this.question % 2 === 0 ? 'yes' : 'no');
+  },
 };
-export default evenGame;
+
+const playEvenGame = () => {
+  launchGameEngine(evenGame);
+};
+
+export default playEvenGame;

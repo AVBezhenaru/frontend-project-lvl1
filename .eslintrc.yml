@@ -11,9 +11,9 @@ parserOptions:
   sourceType: module
 rules: {
   no-console: 0,
-  "default-case": 0,
+  # "default-case": 0,
   linebreak-style: ["error", "windows"],
   import/extensions: ["off", "always"],
-  no-else-return: [ "off" , {allowElseIf :  true }],
-  no-param-reassign: ["off", { "props": false }],
+  # no-else-return: [ "off" , {allowElseIf :  true }],
+  # no-param-reassign: ["off", { "props": false }],
 }

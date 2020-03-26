@@ -1,37 +1,32 @@
-import readlineSync from 'readline-sync';
+import genRandNum from '../genRandNum.js';
+import launchGameEngine from '../index.js';
 
-const randProgArr = () => {
-  const randomRange = 100;
-  const randomNumber = Math.floor(Math.random() * randomRange);
-  const range = 9;
-  const step = 2;
-  const arr = [randomNumber];
-  for (let i = 0; i < range; i += 1) {
-    arr.push(arr[i] + step);
-  }
+const progressionGame = {
+  rules: 'What number is missing in the progression?',
+  question: 0,
+  getQuestion() {
+    const range = 9;
+    const step = 2;
+    const arr = [genRandNum(0, 100)];
 
-  const result = arr[Math.floor(Math.random() * arr.length)];
-  const replaceIndex = arr.indexOf(result);
-  arr[replaceIndex] = '..';
+    for (let i = 0; i < range; i += 1) {
+      arr.push(arr[i] + step);
+    }
 
-  const resultArr = [arr, result];
-  return resultArr;
+    const randNumOfArr = arr[Math.floor(Math.random() * arr.length)];
+    const replaceIndex = arr.indexOf(randNumOfArr);
+    arr[replaceIndex] = '..';
+    this.question = arr.join(' ');
+    this.answer = randNumOfArr;
+  },
+  answer: '',
+  getAnswer() {
+    this.answer = String(this.answer);
+  },
 };
 
-const progressionGame = () => {
-  console.log('What number is missing in the progression?');
-  const result = randProgArr();
-  const strResult = result[0].join(' ');
-  console.log(`Question: ${strResult}`);
-
-  const answer = readlineSync.question('Your answer: ');
-
-  if (result[1] === parseInt(answer, 10)) {
-    return true;
-  } else {
-    console.log(`Your answer: ${answer}, ${answer} is wrong answer ;(.Correct answer was ${result[1]}.`);
-    return false;
-  }
+const playProgressionGame = () => {
+  launchGameEngine(progressionGame);
 };
 
-export default progressionGame;
+export default playProgressionGame;

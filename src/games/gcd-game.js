@@ -1,33 +1,37 @@
-import readlineSync from 'readline-sync';
+import launchGameEngine from '../index.js';
 import genRandNum from '../genRandNum.js';
 
 const getGCD = (a, b) => {
-  while (a !== b) {
-    if (a > b) {
-      a -= b;
+  let one = a;
+  let two = b;
+  while (one !== two) {
+    if (one > two) {
+      one -= two;
     } else {
-      b -= a;
+      two -= one;
     }
   }
 
-  return a;
+  return one;
 };
 
-const gcdGame = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-  const randNum1 = genRandNum(1, 200);
-  const randNum2 = genRandNum(1, 200);
-  console.log(`Question: ${randNum1} ${randNum2}`);
-
-  const correctAnswer = getGCD(randNum1, randNum2);
-  const userAnswer = readlineSync.question('Your answer: ');
-
-  if (correctAnswer === parseInt(userAnswer, 10)) {
-    return true;
-  } else {
-    console.log(`Your answer: ${userAnswer}, ${userAnswer} is wrong answer ;(.Correct answer was ${correctAnswer}.`);
-    return false;
-  }
+const gcdGame = {
+  rules: 'Find the greatest common divisor of given numbers.',
+  question: ' ',
+  getQuestion() {
+    const randNum1 = genRandNum(1, 100);
+    const randNum2 = genRandNum(1, 100);
+    this.question = `${randNum1} ${randNum2}`;
+  },
+  answer: '',
+  getAnswer() {
+    const numbers = this.question.split(' ');
+    this.answer = String(getGCD(parseInt(numbers[0], 10), parseInt(numbers[1], 10)));
+  },
 };
 
-export default gcdGame;
+const playGcdGame = () => {
+  launchGameEngine(gcdGame);
+};
+
+export default playGcdGame;
