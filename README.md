@@ -2,8 +2,6 @@
 
 <a href="https://codeclimate.com/github/AVBezhenaru/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/ba8a2ae7f1483047d6c9/maintainability" /></a>
 
-<a href="https://codeclimate.com/github/AVBezhenaru/frontend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ba8a2ae7f1483047d6c9/test_coverage" /></a>
-
 BRAIN GAMES
 Console game
 
