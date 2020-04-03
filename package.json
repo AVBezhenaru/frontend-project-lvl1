@@ -1,6 +1,6 @@
 {
   "name": "brain_games_bezhenaru",
-  "version": "1.2.1",
+  "version": "1.3.1",
   "description": "Console game",
   "main": "src/index.js",
   "scripts": {
