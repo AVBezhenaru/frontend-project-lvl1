@@ -1,5 +1,5 @@
 import genRandNum from '../genRandNum.js';
-import launchGameEngine from '../index.js';
+import engine from '../index.js';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -21,7 +21,7 @@ const isPrime = (number) => {
 };
 
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const descripiton = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const genQuestion = () => genRandNum(0, 100);
 const getCorrectAnswer = (question) => {
   const result = isPrime(question);
@@ -29,8 +29,14 @@ const getCorrectAnswer = (question) => {
 };
 
 
-const playPrimeGame = () => {
-  launchGameEngine(rules, genQuestion, getCorrectAnswer);
+const questionAnswerGenerate = () => {
+  const question = genQuestion();
+  const answer = getCorrectAnswer(question);
+  return [question, answer];
 };
 
-export default playPrimeGame;
+const lauchGcdGame = () => {
+  engine(descripiton, questionAnswerGenerate);
+};
+
+export default lauchGcdGame;

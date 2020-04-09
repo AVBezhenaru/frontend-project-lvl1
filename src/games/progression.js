@@ -1,12 +1,12 @@
 import genRandNum from '../genRandNum.js';
-import launchGameEngine from '../index.js';
+import engine from '../index.js';
 
 
-const rules = 'What number is missing in the progression?';
+const descripiton = 'What number is missing in the progression?';
 
 const genQuestion = () => {
   const start = [genRandNum(0, 100)];
-  const diff = 2;
+  const diff = genRandNum(2, 10);
   const range = 10;
   const arr = [];
   for (let i = 0; i < range; i += 1) {
@@ -20,14 +20,20 @@ const genQuestion = () => {
 };
 
 const getCorrectAnswer = (question) => {
-  const diff = 2;
   const numbers = question.split(' ');
+  const diff = (+numbers[1] - (+numbers[0]));
   const result = +numbers[0] + (+numbers.indexOf('..') * diff);
   return String(result);
 };
 
-const playProgressionGame = () => {
-  launchGameEngine(rules, genQuestion, getCorrectAnswer);
+const questionAnswerGenerate = () => {
+  const question = genQuestion();
+  const answer = getCorrectAnswer(question);
+  return [question, answer];
 };
 
-export default playProgressionGame;
+const lauchProgressionGame = () => {
+  engine(descripiton, questionAnswerGenerate);
+};
+
+export default lauchProgressionGame;

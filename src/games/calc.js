@@ -1,7 +1,7 @@
 import genRandNum from '../genRandNum.js';
-import launchGameEngine from '../index.js';
+import engine from '../index.js';
 
-const rules = 'What is the result of the expression?';
+const descripiton = 'What is the result of the expression?';
 const genQuestion = () => {
   const randNum1 = genRandNum();
   const randNum2 = genRandNum();
@@ -27,8 +27,14 @@ const getCorrectAnswer = (question) => {
   return String(result);
 };
 
-const playCalcGame = () => {
-  launchGameEngine(rules, genQuestion, getCorrectAnswer);
+const questionAnswerGenerate = () => {
+  const question = genQuestion();
+  const answer = getCorrectAnswer(question);
+  return [question, answer];
 };
 
-export default playCalcGame;
+const lauchCalcGame = () => {
+  engine(descripiton, questionAnswerGenerate);
+};
+
+export default lauchCalcGame;

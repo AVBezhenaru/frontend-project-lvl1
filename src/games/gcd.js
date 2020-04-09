@@ -1,5 +1,5 @@
-import launchGameEngine from '../index.js';
 import genRandNum from '../genRandNum.js';
+import engine from '../index.js';
 
 const getGCD = (a, b) => {
   let one = a;
@@ -16,7 +16,7 @@ const getGCD = (a, b) => {
 };
 
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const descripiton = 'Find the greatest common divisor of given numbers.';
 const genQuestion = () => {
   const randNum1 = genRandNum(1, 100);
   const randNum2 = genRandNum(1, 100);
@@ -27,8 +27,15 @@ const getCorrectAnswer = (question) => {
   return String(getGCD(parseInt(numbers[0], 10), parseInt(numbers[1], 10)));
 };
 
-const playGcdGame = () => {
-  launchGameEngine(rules, genQuestion, getCorrectAnswer);
+
+const questionAnswerGenerate = () => {
+  const question = genQuestion();
+  const answer = getCorrectAnswer(question);
+  return [question, answer];
 };
 
-export default playGcdGame;
+const lauchGcdGame = () => {
+  engine(descripiton, questionAnswerGenerate);
+};
+
+export default lauchGcdGame;
