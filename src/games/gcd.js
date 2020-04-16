@@ -1,6 +1,7 @@
 import genRandNum from '../genRandNum.js';
 import engine from '../index.js';
 
+const descripiton = 'Find the greatest common divisor of given numbers.';
 const getGCD = (a, b) => {
   let one = a;
   let two = b;
@@ -14,28 +15,14 @@ const getGCD = (a, b) => {
 
   return one;
 };
-
-
-const descripiton = 'Find the greatest common divisor of given numbers.';
-const genQuestion = () => {
+const questionAnswerGenerate = () => {
   const randNum1 = genRandNum(1, 100);
   const randNum2 = genRandNum(1, 100);
-  return (`${randNum1} ${randNum2}`);
-};
-const getCorrectAnswer = (question) => {
-  const numbers = question.split(' ');
-  return String(getGCD(parseInt(numbers[0], 10), parseInt(numbers[1], 10)));
-};
-
-
-const questionAnswerGenerate = () => {
-  const question = genQuestion();
-  const answer = getCorrectAnswer(question);
+  const question = `${randNum1} ${randNum2}`;
+  const answer = `${getGCD(randNum1, randNum2)}`;
   return [question, answer];
 };
 
-const lauchGcdGame = () => {
-  engine(descripiton, questionAnswerGenerate);
-};
+const lauchGcdGame = () => engine(descripiton, questionAnswerGenerate);
 
 export default lauchGcdGame;

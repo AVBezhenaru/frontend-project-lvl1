@@ -3,21 +3,13 @@ import genRandNum from '../genRandNum.js';
 import engine from '../index.js';
 
 const descripiton = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-const genQuestion = () => genRandNum(0, 100);
-const getCorrectAnswer = (question) => {
-  const result = question % 2 === 0 ? 'yes' : 'no';
-  return result;
-};
-
+const isEven = (number) => number % 2 === 0;
 const questionAnswerGenerate = () => {
-  const question = genQuestion();
-  const answer = getCorrectAnswer(question);
+  const question = genRandNum(0, 100);
+  const answer = isEven(question) ? 'yes' : 'no';
   return [question, answer];
 };
 
-const launchEvenGame = () => {
-  engine(descripiton, questionAnswerGenerate);
-};
+const launchEvenGame = () => engine(descripiton, questionAnswerGenerate);
 
 export default launchEvenGame;
