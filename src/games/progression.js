@@ -1,7 +1,6 @@
 import genRandNum from '../genRandNum.js';
 import engine from '../index.js';
 
-
 const descripiton = 'What number is missing in the progression?';
 const generateArithmeticProgression = (start, diff, length) => {
   const result = [];
@@ -11,11 +10,14 @@ const generateArithmeticProgression = (start, diff, length) => {
   return result;
 };
 const getRandomProgressionElement = (progression) => {
-  const result = progression[Math.floor(Math.random() * progression.length - 1)];
+  const result = progression[genRandNum(0, progression.length - 1)];
   return result;
 };
 const questionAnswerGenerate = () => {
-  const progression = generateArithmeticProgression(genRandNum(0, 100), genRandNum(1, 10), 10);
+  const start = genRandNum(0, 100);
+  const diff = genRandNum(1, 10);
+  const length = 10;
+  const progression = generateArithmeticProgression(start, diff, length);
   const randomElement = getRandomProgressionElement(progression);
   progression[progression.indexOf(randomElement)] = '..';
   const question = progression.join(' ');

@@ -19,7 +19,7 @@ const questionAnswerGenerate = () => {
   const randNum1 = genRandNum(1, 100);
   const randNum2 = genRandNum(1, 100);
   const question = `${randNum1} ${randNum2}`;
-  const answer = `${getGCD(randNum1, randNum2)}`;
+  const answer = String(getGCD(randNum1, randNum2));
   return [question, answer];
 };
 

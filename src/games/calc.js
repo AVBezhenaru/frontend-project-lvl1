@@ -2,23 +2,18 @@ import genRandNum from '../genRandNum.js';
 import engine from '../index.js';
 
 const descripiton = 'What is the result of the expression?';
-const calculator = (operand1, operand2, operator) => {
-  let result;
+const calculate = (operand1, operand2, operator) => {
   switch (operator) {
     case '+':
-      result = (operand1 + operand2);
-      break;
+      return String(operand1 + operand2);
     case '-':
-      result = (operand1 - operand2);
-      break;
+      return String(operand1 - operand2);
     case '*':
-      result = (operand1 * operand2);
-      break;
+      return String(operand1 * operand2);
     default:
+      return null;
   }
-  return String(result);
 };
-
 const questionAnswerGenerate = () => {
   const randNum1 = genRandNum();
   const randNum2 = genRandNum();
@@ -26,7 +21,7 @@ const questionAnswerGenerate = () => {
   const randOperator = operators[genRandNum(0, operators.length - 1)];
 
   const question = `${randNum1} ${randOperator} ${randNum2}`;
-  const answer = calculator(randNum1, randNum2, randOperator);
+  const answer = calculate(randNum1, randNum2, randOperator);
   return [question, answer];
 };
 
